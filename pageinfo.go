@@ -15,6 +15,8 @@ import (
 func convert(encoding string, src string) string {
     if encoding == "utf-8" {
         return src
+    } else if encoding == "gb2312" {
+        encoding = "gbk"
     }
 	cd, err := iconv.Open("utf-8", encoding)
 	if err != nil {
